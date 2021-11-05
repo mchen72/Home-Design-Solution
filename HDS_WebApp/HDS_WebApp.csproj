@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>aspnet-HDS_WebApp-49080824-0ED7-40AE-B114-270F2F146450</UserSecretsId>
+    <AssemblyName>HDS_WebApp</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

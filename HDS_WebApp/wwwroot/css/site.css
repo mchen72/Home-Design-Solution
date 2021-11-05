@@ -59,70 +59,13 @@ html {
 }
 
 body {
-	/* Margin bottom by footer height */
-	margin-bottom: 60px;
-	background-color: #FBF0CF;
+	/*background-color: #FBF0CF;*/
 }
+
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  white-space: nowrap;
-  line-height: 30px; /* Vertically center the text there */
-}
-footer ul {
-	display: inline-flex;
-    text-decoration: none;
-    list-style: none;
-}
-footer ul li {
-	margin-left: 15px;
-}
-footer ul li a {
-	text-decoration: none;
-	color: black;
+	bottom: 0;
+	width: 100%;
+	white-space: nowrap;
+	line-height: 60px; /* Vertically center the text there */
 }
 
-/* Home Services */
-.home-banner {
-	width: 50%;
-	text-align: center;
-}
-.home-banner img {
-	width: 80%;
-	height: auto;
-	display: block;
-	margin: 0 60% 0;
-}
-
-/*.home-banner .btn {
-	position: absolute;
-	top: 20%;
-	left: 61%;
-	background-color: rgba(139, 0, 0, 0.8);
-	color: white;
-	font-size: 18px;
-	padding: 1% 1.5%;
-	border: none;
-	border-radius: 5px;
-	text-decoration: none;
-}
-.home-banner .btn:hover {
-	border: solid 2px black;
-	background-color: #cc0000;
-} */
-.preview {
-	display: flex;
-	text-align: center;
-}
-.preview-content {
-	padding: 1%;
-	width: 260px;
-	text-align: center;
-}
-.preview img {
-	width: 12.5em;
-	height: 16em;
-	overflow: hidden;
-}
