@@ -2,7 +2,569 @@
     ViewData["Title"] = "Products";
 }
 
-<div class="text-center">
+<div class="text-center col-12">
     <h1 class="display-4">Products</h1>
-    <p></p>
+    <div class="row mt-3">
+        <!-- Filter by Categories clickable function -->
+        <div class="col-lg-2 col-sm-12 mb-3">
+            <h4>Filter by Categories</h4>
+            <div class=" btn-group row justify-content-center m-4">
+                <div class="col-xs m-1">
+                    <button type="button" class="btn btn-outline-primary" data-products="all" onclick="filterSelection(event)">Show All</button>
+                </div>
+                <div class="col-xs m-1">
+                    <button type="button" class="btn btn-outline-primary" data-products="small" onclick="filterSelection(event)">Small Appliances</button>
+                </div>
+                <div class="col-xs m-1">
+                    <button type="button" class="btn btn-outline-primary" data-products="dishwasher" onclick="filterSelection(event)">Dishwasher</button>
+                </div>
+                <div class="col-xs m-1">
+                    <button type="button" class="btn btn-outline-primary" data-products="laundry" onclick="filterSelection(event)">Laundry</button>
+                </div>
+                <div class="col-xs m-1">
+                    <button type="button" class="btn btn-outline-primary" data-products="refrigerator" onclick="filterSelection(event)">Refrigerator</button>
+                </div>
+                <div class="col-xs m-1">
+                    <button type="button" class="btn btn-outline-primary" data-products="range" onclick="filterSelection(event)">Range</button>
+                </div>
+                <div class="col-xs m-1">
+                    <button type="button" class="btn btn-outline-primary" data-products="oven" onclick="filterSelection(event)">Oven</button>
+                </div>
+                <div class="col-xs m-1">
+                    <button type="button" class="btn btn-outline-primary" data-products="cooktop" onclick="filterSelection(event)">Cooktop</button>
+                </div>
+                <div class="col-xs m-1">
+                    <button type="button" class="btn btn-outline-primary" data-products="in-sink" onclick="filterSelection(event)">In-Sink Disposers</button>
+                </div>
+            </div>
+        </div>
+        <!--Cards of products -->
+        <div class="col-lg-10 col-sm-12 mx-auto">
+            <div class="card-deck">
+                <div class="row mt-3">
+                    <div class="col-sm-4 mb-3 item small" data-items="small">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/GEMicrowave.jpg" alt="Image of a GE Microwave" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">GE Over the Range Microwave</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;499.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item dishwasher" data-items="dishwasher">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/GEDishwasher.jpg" alt="Image of a GE Dishwasher" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">GE Dishwasher</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;375.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item dishwasher" data-items="dishwasher">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/BoschDishwasher.jpg" alt="Image of a Bosch Dishwasher" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Bosch Dishwasher</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;899.00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 mb-3 item dishwasher" data-items="dishwasher">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/BoschDishwasher2.jpg" alt="Another image of a Bosch Dishwasher" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Bosch Dishwasher</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;739.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item laundry" data-items="laundry">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/BoschLaundrywasher.jpg" alt="Image of a Bosch Laundrywasher" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Bosch Laundry Washer</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;799.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item laundry" data-items="laundry">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/BoschLaundrydryer.jpg" alt="Image of a Bosch Laundry Dryer" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Bosch Laundry Dryer</h5>
+                                </div>                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;579.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item refrigerator" data-items="refrigerator">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/SubzeroRefrigerator.jpg" alt="Image of Sub-Zero 48 inch Built-in Refrigerator" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Sub-Zero 48" Built-in Refrigerator</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;3850.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item refrigerator" data-items="refrigerator">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div>
+                                    <img src="~/images/products/SubzeroRefrigerator2.png" alt="Image of Sub-Zero 42 inch Built-in Refrigerator" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Sub-Zero 42" Built-in Refrigerator</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;3450.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item refrigerator" data-items="refrigerator">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/SubzeroWineCooler.jpeg" alt="Image of a Sub-Zero Built-in Wine Cooler" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">                                
+                                    <h5 class="card-title">Sub-Zero Built-in Wine Cooler</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;599.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item range" data-items="range">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/VikingRange.jpg" alt="Image of Viking 24 inch Gas Range" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Viking 24" Professional Gas Range</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;3995.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item small" data-items="small">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/MieleCoffee.jpg" alt="Image of Miele Built-in Coffee System" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Miele Built-in Coffee System</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;2799.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item oven" data-items="oven">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/MieleOven.jpg" alt="Image of Miele Double Wall Oven" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Miele Double Wall Oven</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;3750.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item cooktop" data-items="cooktop">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/JACooktop.jpg" alt="Image of Jenn-Air 48 inch Prostyle Downdraft Cooktop" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Jenn-Air 48" Prostyle Downdraft Cooktop</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;2059.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item cooktop" data-items="cooktop">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/JACooktop2.jpg" alt="Image of Jenn-Air Double Electric Cooktop" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Jenn-Air Double Electric Cooktop</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;959.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item cooktop" data-items="cooktop">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/JACooktop3.jpg" alt="Image of Jenn-Air 45 inch Downdraft Cooktop" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Jenn-Air 45" Downdraft Cooktop</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;1489.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item range" data-items="range">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/ThermadorRange.jpg" alt="Image of Thermador Black Stand Covention Range" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Thermador Black Stand Covention Range</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;2479.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item range" data-items="range">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/ThermadorRange2.jpg" alt="Image of Thermador Stainless 30 inch Covention Range" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Thermador Stainless 30" Covention Range</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;2359.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item refrigerator" data-items="refrigerator">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/AmanaRefrigerator.jpg" alt="Image of Amana Side-by-Side Refrigerator" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Amana Side-by-Side Refrigerator</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;1959.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item refrigerator" data-items="refrigerator">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/AmanaRefrigerator2.jpg" alt="Image of Amana Side-by-Side Refrigerator" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Amana Side-by-Side Refrigerator</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;2219.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item in-sink" data-items="in-sink">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/Insinkerator.jpg" alt="Image of Insinkerator In-Sink Disposer" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Insinkerator In-Sink Disposer</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;229.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item in-sink" data-items="in-sink">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/Insinkerator2.jpg" alt="Image of Insinkerator In-Sink Disposer" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Insinkerator In-Sink Disposer</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;99.95</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item in-sink" data-items="in-sink">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/Insinkerator3.jpg" alt="Image of Insinkerator In-Sink Disposer for Septic Systems" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Insinkerator In-Sink Disposer for Septic Systems</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;199.95</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item small" data-items="small">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/UlineWine.jpg" alt="Image of U-Line Wine Captain 75 Bottle" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">U-Line Wine Captain 75 Bottle</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;999.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item small" data-items="small">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/UlineIcemaker.jpg" alt="Image of U-Line Icemaker" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">U-Line Icemaker</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;798.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item small" data-items="small">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/GEMicrowave2.jpg" alt="Image of GE Microwave" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">GE Microwave</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;239.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item range" data-items="range">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/DacorRange.jpg" alt="Image of Dacor 36 inch Pro Dual-Fuel Range" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Dacor 36" Pro Dual-Fuel Range</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;6949.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item range" data-items="range">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/DacorRange2.jpg" alt="Image of Dacor Heritage 30 inch Stainless Range" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Dacor Heritage 30" Stainless Range</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;3999.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item range" data-items="range">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/DacorRange3.jpg" alt="Image of Dacor Renaissance 36 inch Stainless Range" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Dacor Renaissance 36" Stainless Range</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;5498.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item oven" data-items="oven">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/DacorOven.jpg" alt="Image of Dacor Heritage 27 inch Collection Wall Oven" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Dacor Heritage 27" Collection Wall Oven</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;4019.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item oven" data-items="oven">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/DacorOven2.jpg" alt="Image of Dacor Heritage 30 inch Collection Pro Style Double Oven" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">Dacor Heritage 30" Collection Pro Style Double Oven</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;5399.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item range" data-items="range">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/GERange.jpg" alt="Image of GE 5.0 cubic feet Gas Range Stainless Steel" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">GE 5.0 cu ft. Gas Range Stainless Steel</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;799.00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 mb-3 item refrigerator" data-items="refrigerator">
+                        <div class="card" style="width: 100%;height: 100%;">
+                            <div class="card-body d-flex flex-column">
+                                <div class="mt-auto">
+                                    <img src="~/images/products/GERefrigerator.jpg" alt="Image of GE 27 cubic feet French Door Refrigerator Stainless Steel" class="img-fluid" />
+                                </div>
+                                <div class="mt-auto">
+                                    <h5 class="card-title">GE 27 cu ft. French Door Refrigerator Stainless Steel</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <p class="card-text">&#36;2199.00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Script to filter -->
+        <script>
+
+            function filterSelection(e) {
+                const products = document.querySelectorAll(".item");
+                let filter = e.target.dataset.products;
+                if (filter == "all") {
+                    products.forEach(p => p.classList.remove('d-none'));
+                } else {
+                    products.forEach(p => {
+                        p.classList.contains(filter) ?
+                        p.classList.remove('d-none') :
+                        p.classList.add('d-none');
+                    });
+                };
+            };
+
+        </script>
+        <!-- Scroll to top button -->
+        <a id="scroll-to-top" href="#" class="btn btn-outline-primary btn-lg" role="button" onclick="scrollToTop" style="position:fixed; bottom: 25px; right:25px;"><i class="fas fa-chevron-up"></i></a>
+        <script>
+            function scrollToTop() {
+                document.ready(function () {
+                    window.scroll(function () {
+                        if (this.scrollTop() > 50) {
+                            ('#scroll-to-top').fadeIn();
+                        } else {
+                            ('#scroll-to-top').fadeOut();
+                        }
+                    });
+                    ('#scrollToTop').click(function () {
+                        ('body,html').animate({
+                            scrollTop: 0
+                        }, 400);
+                        return false;
+                    });
+                });
+            }
+        </script>
+    </div>
+
 </div>
