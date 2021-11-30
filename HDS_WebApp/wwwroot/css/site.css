@@ -69,3 +69,19 @@ body {
 	line-height: 60px; /* Vertically center the text there */
 }
 
+.hero {
+	color: #6183ff;
+	font-size: 4em;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.hero a:hover{
+	font-size: 1.2em;
+	text-decoration: none;
+}
+
+.sub-hero {
+	font-size: 2.5em;
+	color: #1538b8;
+}
