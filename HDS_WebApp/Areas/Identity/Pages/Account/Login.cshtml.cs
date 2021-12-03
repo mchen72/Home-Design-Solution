@@ -73,7 +73,7 @@ namespace HDS_WebApp.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/"); //Add employee Index here
+            //returnUrl = returnUrl ?? Url.Content("~/");
 
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace HDS_WebApp.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    return RedirectToAction("EmployeeIndex", "Employee", new { area = "Employee" }); //This part redirect users to the employee home page after login
                 }
                 if (result.RequiresTwoFactor)
                 {
