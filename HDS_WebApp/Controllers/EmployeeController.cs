@@ -11,11 +11,11 @@ namespace HDS_WebApp.Controllers
 {
     public class EmployeeController : Controller
     {
-        private readonly ProductDbContext _context; //context for data to send to view
+        private readonly ProductDbContext p_context; //context for data to send to view
 
         public EmployeeController(ProductDbContext context)
         {
-            _context = context;
+            p_context = context;
         }
 
         public IActionResult EmployeeIndex()
@@ -24,7 +24,8 @@ namespace HDS_WebApp.Controllers
         }
         public async Task<IActionResult> Inventory()
         {
-            return View(await _context.ProductData.ToListAsync());
+            return View(await p_context.ProductData.ToListAsync());
         }
+
     }
 }
