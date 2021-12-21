@@ -1,5 +1,3 @@
-using System;
-
 namespace HDS_WebApp.Models
 {
     public class ErrorViewModel

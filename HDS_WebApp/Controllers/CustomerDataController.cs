@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using HDS_WebApp.Data;
+using HDS_WebApp.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using HDS_WebApp.Data;
-using HDS_WebApp.Models;
 
 namespace HDS_WebApp.Controllers
 {
