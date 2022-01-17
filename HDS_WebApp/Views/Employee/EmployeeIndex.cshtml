@@ -5,7 +5,44 @@
 }
 
 <div class="container">
-    <h1 class="display-4">Employee Index</h1>
-    <!-- Add recent top 5 activities / services on the index -->
+    <h1 class="display-4 text-center mb-5">Employee Index</h1>
+
+    <div class="row">
+        <div class="col-sm-6 mb-3">
+            <div class="card">
+                <div class="card-header">Quick Navigation</div>
+                <div class="card-body">
+                    <a class="h6 nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Create">Add New Item</a>
+                    <a class="h6 nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Create">Add New Customer</a>
+                    <a class="h6 nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">View Inventory</a>
+                    <a class="h6 nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">View Customers</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mb-3">
+            <div class="card">
+                <div class="card-header">Coming Soon</div>
+                <div class="card-body">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mb-3">
+            <div class="card">
+                <div class="card-header">Coming Soon</div>
+                <div class="card-body">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 mb-3">
+            <div class="card">
+                <div class="card-header">Coming Soon</div>
+                <div class="card-body">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 

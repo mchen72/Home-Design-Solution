@@ -1,28 +1,31 @@
-﻿using HDS_WebApp.Data;
-using HDS_WebApp.Models;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using HDS_WebApp.Data;
+using HDS_WebApp.Models;
 
 namespace HDS_WebApp.Controllers
 {
-    public class CustomerDataController : Controller
+    public class ProductController : Controller
     {
-        private readonly CustomerDbContext _context;
+        private readonly ProductDbContext _context;
 
-        public CustomerDataController(CustomerDbContext context)
+        public ProductController(ProductDbContext context)
         {
             _context = context;
         }
 
-        // GET: CustomerData
+        // GET: Product
         public async Task<IActionResult> Index()
         {
-            return View(await _context.CustomerData.ToListAsync());
+            return View(await _context.ProductData.ToListAsync());
         }
 
-        // GET: CustomerData/Details/5
+        // GET: Product/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -30,39 +33,39 @@ namespace HDS_WebApp.Controllers
                 return NotFound();
             }
 
-            var customerData = await _context.CustomerData
+            var productData = await _context.ProductData
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (customerData == null)
+            if (productData == null)
             {
                 return NotFound();
             }
 
-            return View(customerData);
+            return View(productData);
         }
 
-        // GET: CustomerData/Create
+        // GET: Product/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: CustomerData/Create
+        // POST: Product/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("LastName,FirstName,StreetAddress,City,State,ZipCode,Id,PhoneNumber")] CustomerData customerData)
+        public async Task<IActionResult> Create([Bind("Id,Brand,Cost,CurrentInventory,Description,LargeItem,ListPrice,ModelNumber,SerialNumber,CategoryName,Name")] ProductData productData)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(customerData);
+                _context.Add(productData);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(customerData);
+            return View(productData);
         }
 
-        // GET: CustomerData/Edit/5
+        // GET: Product/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -70,22 +73,22 @@ namespace HDS_WebApp.Controllers
                 return NotFound();
             }
 
-            var customerData = await _context.CustomerData.FindAsync(id);
-            if (customerData == null)
+            var productData = await _context.ProductData.FindAsync(id);
+            if (productData == null)
             {
                 return NotFound();
             }
-            return View(customerData);
+            return View(productData);
         }
 
-        // POST: CustomerData/Edit/5
+        // POST: Product/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("LastName,FirstName,StreetAddress,City,State,ZipCode,Id,PhoneNumber")] CustomerData customerData)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Brand,Cost,CurrentInventory,Description,LargeItem,ListPrice,ModelNumber,SerialNumber,CategoryName,Name")] ProductData productData)
         {
-            if (id != customerData.Id)
+            if (id != productData.Id)
             {
                 return NotFound();
             }
@@ -94,12 +97,12 @@ namespace HDS_WebApp.Controllers
             {
                 try
                 {
-                    _context.Update(customerData);
+                    _context.Update(productData);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CustomerDataExists(customerData.Id))
+                    if (!ProductDataExists(productData.Id))
                     {
                         return NotFound();
                     }
@@ -110,10 +113,10 @@ namespace HDS_WebApp.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(customerData);
+            return View(productData);
         }
 
-        // GET: CustomerData/Delete/5
+        // GET: Product/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
@@ -121,30 +124,30 @@ namespace HDS_WebApp.Controllers
                 return NotFound();
             }
 
-            var customerData = await _context.CustomerData
+            var productData = await _context.ProductData
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (customerData == null)
+            if (productData == null)
             {
                 return NotFound();
             }
 
-            return View(customerData);
+            return View(productData);
         }
 
-        // POST: CustomerData/Delete/5
+        // POST: Product/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var customerData = await _context.CustomerData.FindAsync(id);
-            _context.CustomerData.Remove(customerData);
+            var productData = await _context.ProductData.FindAsync(id);
+            _context.ProductData.Remove(productData);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool CustomerDataExists(string id)
+        private bool ProductDataExists(string id)
         {
-            return _context.CustomerData.Any(e => e.Id == id);
+            return _context.ProductData.Any(e => e.Id == id);
         }
     }
 }
